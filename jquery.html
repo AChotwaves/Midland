@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+        <!DOCTYPE html>
+        <html>
+        
+        <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="../CSS/style.css">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+            crossorigin="anonymous">
+        
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        
+          </script>
+          <script>
+            const tax_price=0.08;
+            const phone=99.99;
+            const acc=9.99;
+            const thres=200;
+
+            var bank = 303.91;
+
+            var amount=0;
+
+            function calculateTax(amount){
+                return amount*tax_price;
+
+            }
+            
+            function formatAmount(amount){
+                return "$"+ amount.toFixed(2);
+
+            }
+
+            while(amount < bank){
+              amount =amount + phone;
+              if(amount <thres){
+                amount=amount + acc;
+              }
+            }
+
+            amount = amount + calculateTax(amount);
+
+            console.log(
+                "your purchase:"+ formatAmount( amount)
+            );
+
+            if (amount > bank){
+              console.log(
+                "you cant buy this stuff boi"
+              )
+            }
+          </script>
+</head>
+<body>
+
+
+</body>
+</html>
